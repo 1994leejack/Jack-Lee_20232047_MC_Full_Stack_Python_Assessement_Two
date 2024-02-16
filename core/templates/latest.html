@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Latest - Eco Website{% endblock %}
+
+{% block content %}
+    <header>
+        <h1>Latest Articles</h1>
+    </header>
+    <div class="content">
+        {% for article in articles %}
+            <div class="article">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.content }}</p>
+                {% if article.image %}
+                    <img src="{{ article.image.url }}" alt="{{ article.title }}">
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+

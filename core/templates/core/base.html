@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="{% static 'css\styles.css' %}">
+</head>
+<body>
+    <div class="container">
+    <header>
+        <h1>Global energy consumption</h1>
+        <h2>We can make the differnce!</h2>
+    </header>
+    <nav>
+        <ul class="navbar">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'energy_data' %}">Energy Data</a></li>
+            <li><a href="{% url 'latest' %}">Latest</a></li>
+            <li><a href="{% url 'subscribe' %}">Subscribe</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    </div>
+    <footer>
+        <a href="{% url 'contact' %}">Contact</a>
+        <p>&copy; 2024 EcoEnergy LTD. All rights reserved.</p>
+        <p>All materials on this website are sourced from external sources, including Google, and are used for illustrative purposes only. These materials, including images, may be subject to copyright.</p>
+        <p>We do not claim ownership or rights over these images. If you are the owner of any image used on this website and would like it to be removed or properly credited, please contact us immediately.</p>
+    </footer>
+</body>
+</html>
+
+
+

@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Subscribe - Eco Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Subscribe to Our Newsletter</h1>
+    <img src="{% static 'images/sub.jpg' %}" alt="feature">
+    <p>Subscribe to receive the latest updates, news, and articles related to eco-friendly living. By subscribing you are agreeing to the terms of our privacy policy.</p>
+    <form id="subscribe-form" method="post" action="{% url 'subscribe' %}">
+        {% csrf_token %}
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</div>
+{% endblock %}

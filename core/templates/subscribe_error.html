@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Subscribe Error{% endblock %}
+
+{% block content %}
+    <h1>Sorry! : Email Already Subscribed</h1>
+    <p>The email address <strong>{{ email }}</strong> is already subscribed to our newsletter. If you believe this is an error, please contact us.</p>
+    <p>Our contact page link can be found on our footer!</p>
+    <img src="{% static 'images/health.jpg' %}" alt="sub">
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}Home - Eco Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Eco Website</h1>
+    <p>We believe in clean energy!
+       We are aiming to increase renewable power generation by 2025.
+       In our website we will offer a table of renewable energy by contribution in Twh.
+       Offer a filter which allows you on see from highest to lowest.
+       We offer the latest updates and our renewable table is updated frequently.
+       We  also have the lastest new and articles on climate change and renewable energy. 
+       So if you want to make the differnce and be part of the change. Subscribe to our webiste!
+    </p>
+    <div class="photos">
+        <img src="{% static 'images/carousel1.jpg' %}" alt="carousel1">
+        <img src="{% static 'images/carousel2.jpg' %}" alt="carousel2">
+    </div>
+</div>
+{% endblock %}

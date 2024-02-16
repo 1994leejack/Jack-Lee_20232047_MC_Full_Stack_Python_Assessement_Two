@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Energy Data - Eco Website{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Renewable Power Generation Data</h1>
+    <p>Here you can see the Total renewable power genertaion for each regeneration mode in Twh.
+       You can filter highest to lowest and vice versa. This table is updated requarly with up to date data by our scientists that work
+       over the clock to achieve our end goal of ZERO climate change.
+    </p>
+    <div class="sort-options">
+        <form method="get" action="{% url 'energy_data' %}">
+            <select name="sort_order">
+                <option value="default">Default</option>
+                <option value="lowest_to_highest">Lowest to Highest</option>
+                <option value="highest_to_lowest">Highest to Lowest</option>
+            </select>
+            <button type="submit">Sort</button>
+        </form>
+    </div>    
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Mode of Generation</th>
+                <th>Contribution (TWh)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.mode_of_generation }}</td>
+                <td>{{ item.contribution_twh }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
